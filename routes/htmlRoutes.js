@@ -1,11 +1,14 @@
-const path = require('path');
+const path = require("path");
+const express = require('express')
+const app = express()
 
-module.exports = function (app) {
-    app.get("*", function (req, res) {
-        res.sendFile(path.join(__dirname, "./public/assets/index.html"));
-    });
-    
-    app.get("/notes", function (req, res) {
-        res.sendFile(path.join(__dirname, "./public/assets/notes.html"));
-    });
-};
+// Paths to the two main pages
+app.get("*.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/assets/index.html"));
+});
+
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/assets/notes.html"));
+});
+
+
