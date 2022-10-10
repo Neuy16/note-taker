@@ -8,8 +8,7 @@ const fs = require("fs");
 router.get("/api/notes", (req, res) => {
   fs.readFile("../db/db.json", (err, data) => { 
     if (err) throw err;
-    let note = JSON.parse(data);
-    console.log(note);
+    res.json(JSON.parse(data));
   });
 });
 // Posts new note data to db
