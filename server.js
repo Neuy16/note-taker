@@ -14,9 +14,9 @@ const htmlRoutes = require('./routes/htmlRoutes')
 app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
 
-app.listen(PORT, err => {
+app.listen(port, err => {
     if(err) {
         return console.log('ERROR', err);
     }
-    console.log(`Listening on port ${PORT}`);
+    console.log(`Listening on port ${port}`);
 });
